@@ -1,19 +1,19 @@
 import React from 'react';
 import styles from './FrontCard.module.css';
 
-const FrontCard = () => {
+const FrontCard = (props) => {
     return (
         <div className={styles.card}>
             <div className={styles.contents}>
                 <div className={styles.cardnumber}>
-                    2534 6353 2426 9836
+                    {props.number}
                 </div>
                 <div className={styles.details}>
                     <div>
-                        ANKIT PRAKASH
+                        {props.name}
                     </div>
                     <div>
-                        06/26
+                        {props.month}/{props.year}
                     </div>
                 </div>
             </div>

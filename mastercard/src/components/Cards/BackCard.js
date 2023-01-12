@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './BackCard.module.css';
 
-const BackCard = () => {
+const BackCard = (props) => {
     return (
         <div className={styles.card}>
             <div className={styles.bar}></div>
             <div className={styles.content}>
-                423
+                {props.cvv}
             </div>
         </div>
     );
