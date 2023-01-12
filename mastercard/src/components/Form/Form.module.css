@@ -1,0 +1,65 @@
+.body{
+    height: 750px;
+    width: 1300px;
+    margin: 30px 120px;
+    display: flex;
+    position: absolute;
+}
+
+.left{
+    height:750px;
+    width: 400px;
+    background: linear-gradient(26.99deg, rgba(69, 26, 78, 0.2) 52.61%, rgba(60, 13, 13, 0.2) 95.07%), linear-gradient(164.67deg, rgba(22, 4, 31, 0.98) 4.47%, #380C4A 15.5%, #3B0E46 19.19%, #3D0F42 23.38%, #441436 30.26%, #33254E 36.4%, #2B2D59 42.79%, #292654 47.99%, #271F4F 52.8%, #240D37 64.72%, #22052D 79.1%);
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.right{
+    height: 750px;
+    width: 900px;
+    background-color: rgb(213, 212, 212);
+}
+
+.formContainer{
+    height: fit-content;
+    width: fit-content;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* border: 1px solid red; */
+    padding: 10px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.cardDetails{
+    display: flex;
+    justify-content: space-between;
+}
+
+.date{
+    display: flex;
+    justify-content:left;
+}
+
+.dater{
+    position: absolute;
+    /* border: 1px solid red; */
+    margin-left: 60px;
+}
+
+.btn{
+    width: 305px;
+    background-color: #200930;
+    color: white;
+    margin-top: 30px;
+    height: 40px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    background-color: rgb(47, 46, 46);
+    cursor: pointer;
+    border: 0;
+}

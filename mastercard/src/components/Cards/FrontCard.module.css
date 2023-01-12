@@ -1,0 +1,32 @@
+.card{
+    height: 170px;
+    width: 310px;
+    position: absolute;
+    margin: 90px 100px;
+    background: linear-gradient(120deg,#5e90e6,#620594,#623ff2,#6244fa,#6328c0,#cf56bd,#ea7167,#41dede);
+    border-radius: 5px;
+    color: white;
+    padding: 20px;
+}
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    bottom: 5px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+
+.cardnumber{
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-align: center;
+    word-spacing: 3px;
+}
+
+.contents{
+    position: relative;
+    top: 100px;
+}
