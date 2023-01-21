@@ -22,8 +22,47 @@ const Form = () => {
         cvv: "cvv"
     });
 
+    const [error, setError] = useState({
+        name:"",
+        cardNumber: "",
+        date: "",
+        cvv: ""
+    });
+
     function handleClick(event){
         event.preventDefault();
+
+        if(!formData.name){
+            setError({name: "** Enter name first."});
+            return;
+        } 
+        if(!formData.cardNumber){
+            setError({cardNumber: "** Enter card number first."});
+            return;
+        }
+        if(formData.cardNumber.length !== 16){
+            setError({cardNumber: "** Enter valid card number."});
+            return;
+        }
+        if(!formData.month || !formData.year){
+            setError({date: "** Enter date."});
+            return;
+        }
+        if(formData.month>12 || formData.month<1 || formData.year>99 || formData.year<10){
+            setError({date: "** Enter valid date."});
+            return;
+        }
+        if(!formData.cvv){
+            setError({cvv: "** Enter cvv"});
+            return;
+        }
+        if(formData.cvv>999 || formData.cvv<100){
+            setError({cvv: "** Enter valid cvv"});
+            return;
+        }
+
+        setError({});
+
         setCardDetails(formData);
         toast("Success!!");
     }
@@ -57,11 +96,13 @@ const Form = () => {
                         <div className={styles.input}>
                             <span className={styles.title}>CARDHOLDER NAME</span><br></br>
                             <input name='name' onChange={handleChange} className={styles.problem} type="text" size="40" placeholder="e.g. Ankit Prakash"></input>
+                            <div className={styles.errorMessage}>{error.name}</div>
                         </div>
 
                         <div className={styles.input}>
                             <span className={styles.title}>CARD NUMBER</span><br></br>
                             <input name='cardNumber' onChange={handleChange} className={styles.problem} type="text" size="40" placeholder="e.g. 4231 3425 6453 5463"></input>
+                            <div className={styles.errorMessage}>{error.cardNumber}</div>
                         </div>
                         <div className={styles.cardDetails}>
                             <div className={styles.date}>
@@ -69,6 +110,7 @@ const Form = () => {
                                     <div className={styles.input}>
                                         <span className={styles.title}>EXP. DATE (MM/YY)</span><br></br>
                                         <input name='month' onChange={handleChange} className={styles.problem} type="text" size="2" placeholder="MM"></input>
+                                        <div className={styles.errorMessage}>{error.date}</div>
                                     </div>
                                 </div>
                                 <div className={styles.dater}>
@@ -82,6 +124,7 @@ const Form = () => {
                                 <div className={styles.input}>
                                     <span className={styles.title}>CVV</span><br></br>
                                     <input name='cvv' onChange={handleChange} className={styles.problem} type="text" size="5" placeholder="e.g. 423"></input>
+                                    <div className={styles.errorMessage}>{error.cvv}</div>
                                 </div>
                             </div>
                         </div>
